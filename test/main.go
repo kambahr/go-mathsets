@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/kambahr/go-mathsets"
-
+)
 
 // generateTestList creates an array of string consisting of test-data.
 // The test-data is comprised of random data; in real scenario, this
