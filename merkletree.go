@@ -1,7 +1,7 @@
 // References
-// Greg Walker 2020, Merkle Root , Learn me a bitcoin, viewed 30 May 2021, <https://learnmeabitcoin.com/technical/merkle-root>.
-// Teemu Kanstrén 2017, Merkle Trees: Concepts and Use Cases, Coinmonks, viewed 30 May 2021, <https://medium.com/coinmonks/merkle-trees-concepts-and-use-cases-5da873702318>.
-// Chumbley, A., Moore, K. and Khim, J.2016, Merkle Tree, BRILLIANT, viewed 30 May 2021, <https://brilliant.org/wiki/merkle-tree/>.
+// Greg Walker 2020, Merkle Root , Learn me a bitcoin. Available at: https://learnmeabitcoin.com/technical/merkle-root (Accessed: 30 May 2021).
+// Teemu Kanstrén 2017, Merkle Trees: Concepts and Use Cases, Coinmonks. Available at: https://medium.com/coinmonks/merkle-trees-concepts-and-use-cases-5da873702318 (Accessed: 30 May 2021).
+// Chumbley, A., Moore, K. and Khim, J.2016, Merkle Tree, BRILLIANT. Available at: https://brilliant.org/wiki/merkle-tree/ (Accessed: 30 May 2021).
 
 package mathsets
 
