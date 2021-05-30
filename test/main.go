@@ -61,9 +61,9 @@ func demoVerifyWithBicoinBlock() {
 		"e9a66845e05d5abc0ad04ec80f774a7e585c6e8db975962d069a522137b80c1d",
 	}
 
-	fmt.Println("Transactions from Bitcoin Block:")
+	fmt.Println("Merkle Root of transactions from the Bitcoin Block:")
 	fmt.Println(strings.Repeat(" ", 12), "000000000003ba27aa200b1cecaad478d2b00432346c3f1f3986da1afd33e506")
-	fmt.Println("Publised Merkel Root:")
+	fmt.Println("Published Merkel Root:")
 	fmt.Println(strings.Repeat(" ", 12), publisedMR)
 
 	mr, err := mathsets.GetMerkleRoot(tx)
@@ -101,6 +101,7 @@ func demoDataChanged() {
 		fmt.Println(err)
 		return
 	}
+	fmt.Println("------ Modify node in test data ------")
 	fmt.Println("MR 1:", strings.Repeat(" ", 6), mr1)
 	fmt.Println("MR 2:", strings.Repeat(" ", 6), mr2)
 
@@ -109,7 +110,7 @@ func demoDataChanged() {
 	} else {
 		fmt.Println("list unchanged.")
 	}
-	fmt.Println(strings.Repeat("-", 40))
+	fmt.Println(strings.Repeat("-", 70))
 }
 
 // getLongString generates  long string.
@@ -123,9 +124,9 @@ func getLongString(size uint) string {
 	return strings.Join(a, "\n")
 }
 
-// demoHashVsMerkelRoot compares the time it takes to created
+// demoHashVsMerkleRoot compares the time it takes to created
 // a has vs merkle root.
-func demoHashVsMerkelRoot() {
+func demoHashVsMerkleRoot() {
 
 	lngStr := getLongString(500000)
 
@@ -135,7 +136,7 @@ func demoHashVsMerkelRoot() {
 	h := mathsets.Reversebytes(mathsets.Hash256Twice(b))
 	hash := fmt.Sprintf("%x", h)
 	tookh := time.Since(start)
-
+	fmt.Println("------ Comparing performance bewteen hash and merkle root ------")
 	fmt.Println("Hash:", strings.Repeat(" ", 6), hash)
 	fmt.Println("Took:", strings.Repeat(" ", 6), tookh)
 
@@ -145,10 +146,13 @@ func demoHashVsMerkelRoot() {
 	tookmr := time.Since(start)
 	fmt.Println("\nMerkle Root:", mr)
 	fmt.Println("Took:", strings.Repeat(" ", 6), tookmr)
+	fmt.Println(strings.Repeat("-", 70))
 }
 
+// demoGetMerkleTree dsplays nodes from a merkle tree.
 func demoGetMerkleTree() {
 	// Get the tree
+	fmt.Println("\n------ Merkle Tree ------")
 	list := generateTestList(50000)
 	mt, err := mathsets.GetMerkleTree(list)
 	if err != nil {
@@ -156,21 +160,29 @@ func demoGetMerkleTree() {
 		return
 	}
 	// Look at the first element in the tree
-	fmt.Println("Tree Root : ", mt.Root)
-	fmt.Println("\n------ First Branch ------")
-	fmt.Println("Root:       ", mt.Branches[0].Root)
-	fmt.Println("Left Leaf:  ", mt.Branches[0].LeafLeft)
-	fmt.Println("Right Leaf: ", mt.Branches[0].LeafRight)
+	fmt.Println("Tree Root:   ", mt.Root)
+	fmt.Println("First Branch:")
+	fmt.Println("Root:        ", mt.Branches[0].Root)
+	fmt.Println("Left Leaf:   ", mt.Branches[0].LeafLeft)
+	fmt.Println("Right Leaf:  ", mt.Branches[0].LeafRight)
 }
 
+func printBanner() {
+	fmt.Println(strings.Repeat("*", 40))
+	fmt.Println("*", strings.Repeat(" ", 9), "Merkle Tree Demo", strings.Repeat(" ", 9), "*")
+	fmt.Println(strings.Repeat("*", 40))
+	fmt.Println("")
+}
 func main() {
+
+	printBanner()
 
 	demoVerifyWithBicoinBlock()
 
 	demoDataChanged()
 
 	// Compare performance bweteen Hash and MekleRoot
-	demoHashVsMerkelRoot()
+	demoHashVsMerkleRoot()
 
 	demoGetMerkleTree()
 
@@ -188,6 +200,8 @@ func main() {
 	//    If indexed
 	//      1. Select by array index and compare.
 	//
+
+	fmt.Println("")
 
 	return
 }
