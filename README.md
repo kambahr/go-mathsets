@@ -34,12 +34,12 @@ demoHashVsMerkelRoot() compares the calculation time between merkle root and jus
 
 #### References
 ``` bash
-Greg Walker 2020, Merkle Root, Learn me a bitcoin. Available at: https://learnmeabitcoin.com/technical/merkle-root (Accessed: 30 May 2021).
+Greg Walker 2020, Merkle Root, Learn me a bitcoin. Available at: https://learnmeabitcoin.com/technical/merkle-root (Last Accessed: 30 May 2021).
 
 Teemu Kanstrén 2017, Merkle Trees: Concepts and Use Cases, Coinmonks. Available at: https://medium.com/coinmonks/
-merkle-trees-concepts-and-use-cases-5da873702318 (Accessed: 30 May 2021).
+merkle-trees-concepts-and-use-cases-5da873702318 (Last Accessed: 30 May 2021).
 
-Chumbley, A., Moore, K. and Khim, J.2016, Merkle Tree, BRILLIANT. Available at: https://brilliant.org/wiki/merkle-tree/ (Accessed: 30 May 2021).
+Chumbley, A., Moore, K. and Khim, J.2016, Merkle Tree, BRILLIANT. Available at: https://brilliant.org/wiki/merkle-tree/ (Last Accessed: 30 May 2021).
 
 ```
 
