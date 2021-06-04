@@ -32,7 +32,7 @@ func getNodeRoot(sLeft string, sRight string) string {
 	return s
 }
 
-// GetBranchFromPlainText gets the hash of the leaevs and
+// GetBranchFromPlainText gets the hash of the leaves and
 // their root hash.
 func GetBranchFromPlainText(txt1 string, txt2 string) Branch {
 	var b Branch
@@ -86,7 +86,7 @@ func GetMerkleTree(nodes []string) (MerkleTree, error) {
 
 lblAgain:
 
-	// Make sure the goto loop does not execute foreever.
+	// Make sure the goto loop does not execute infinitely.
 	if gotocountMove > gotocountStart {
 		return mv, errors.New("failed to get merkle root")
 	}
@@ -177,7 +177,7 @@ func GetMerkleRoot(nodes []string) (string, error) {
 
 lblAgain:
 
-	// Make sure the goto loop does not execute foreever.
+	// Make sure the goto loop does not execute infinitely.
 	if gotocountMove > gotocountStart {
 		return "", errors.New("failed to get merkle root")
 	}
