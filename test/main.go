@@ -50,7 +50,7 @@ func demoVerifyWithBicoinBlock() {
 
 	publisedMR := "f3e94742aca4b5ef85488dc37c06c3282295ffec960994b2c0d5ac2a25a95766"
 
-	// You can alter any of the following values sto see that the merkel root
+	// You can alter any of the following values to see that the merkel root
 	// will not match the above.
 
 	// Transactions
@@ -124,8 +124,8 @@ func getLongString(size uint) string {
 	return strings.Join(a, "\n")
 }
 
-// demoHashVsMerkleRoot compares the time it takes to created
-// a has vs merkle root.
+// demoHashVsMerkleRoot compares the time it takes to create
+// a hash vs merkle root.
 func demoHashVsMerkleRoot() {
 
 	lngStr := getLongString(500000)
